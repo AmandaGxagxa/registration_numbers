@@ -1,0 +1,28 @@
+.reg{
+  width: 130px;
+  height: 30px;
+  border: solid black;
+  background-color: yellow;
+  border-radius: 1em;
+}
+.btn{
+  margin-left: 50px;
+}
+  span{
+    display:inline-block;
+    width: 120px;
+    font-size: 120%;
+    font-weight: bold;
+    color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: orange;
+    padding:5px;
+    margin: 2px;
+
+
+}
+
+/* ul{
+  style="list-style-type:none"
+} */

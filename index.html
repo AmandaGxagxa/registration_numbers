@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration numbers</title>
+    <link rel="stylesheet" href="css/registration_number.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/skeleton.css">
+  </head>
+  <body>
+<div class="container">
+  <h4>Registration numbers:</h4>
+  <input type="text" onfocus="this.value=''" class="inputReg" name="" value="">
+  <button type="button" class="button-primary btn" name="button">Add</button>
+  <button type="button" class="button-primary btn_reset" name="button">Clear</button>
+<br>
+<label class="errorMsg" for=""></label>
+  <select id = "myPlaces">
+    <option class="dropDown" value = "bape Town">Cape Town</option>
+    <option  class="dropDown" value = "bellville">Bellville</option>
+    <option class="dropDown" value = "paarl">Paarl</option>
+    <option class="dropDown" value = "stellenbosch">Stellenbosch</option>
+    <option class="dropDown" value = "malmesbury">Malmesbury</option>
+    <option class="dropDown" value = "george">George</option>
+  </select>
+<!-- <button type="button" class="button-primary btn" name="button">filter</button> -->
+  <div class="regNum">
+    <div id='unordered' style="list-style-type:none">
+    </div>
+  </div>
+
+</div>
+  </body>
+  <script src="js/registration_number.js" charset="utf-8"></script>
+  <script src="ref_dom.js" charset="utf-8"></script>
+</html>
