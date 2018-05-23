@@ -26,9 +26,11 @@ it("should be able to add the registration number that start with CK.", function
 
     assert.deepEqual(registration.getRegMapKeys(), ['CA 124567']);
   });
-  it("should be able to print nothing when registration in not valid.", function() {
+  it("should be able to take all from Cape Town.", function() {
     var registration = Registration();
-    assert.equal(registration.addRegNumber('CZ 124567'), false);
+    registration.addRegNumber('CA 124567')
+    registration.addRegNumber('CA 124568')
+    assert.equal(registration.findFrom('Cape Town'), "2");
   });
   it("should be able to print true when added allowed registration number.", function() {
     var registration = Registration();
