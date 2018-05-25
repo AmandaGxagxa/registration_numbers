@@ -5,26 +5,26 @@ describe('Returns Cape Town because startswith CA', function() {
 
     registration.addRegNumber('CY 124567');
     registration.addRegNumber('CY 124567');
-    assert.deepEqual(registration.getRegMapKeys(), ['CY 124567']);
+    assert.deepEqual(registration.getRegMapKeys(), {'CY 124567' : 0});
 
   });
 
   it("should not add invalid reg numbers", function() {
     var registration = Registration();
     registration.addRegNumber('CC 124567');
-    assert.equal('', registration.getRegNum());
+    assert.notEqual(registration.getRegNum(), {'CC 124567':0});
 
   });
 it("should be able to add the registration number that start with CK.", function() {
     var registration = Registration();
     registration.addRegNumber('CK 124567')
-    assert.deepEqual(registration.getRegMapKeys(), ['CK 124567'])
+    assert.deepEqual(registration.getRegMapKeys(), {'CK 124567': 0})
   });
   it("should be able to add the registration that starts CA", function() {
     var registration = Registration();
     registration.addRegNumber('CA 124567');
 
-    assert.deepEqual(registration.getRegMapKeys(), ['CA 124567']);
+    assert.deepEqual(registration.getRegMapKeys(), {'CA 124567':0});
   });
   it("should be able to take all from Cape Town.", function() {
     var registration = Registration();
