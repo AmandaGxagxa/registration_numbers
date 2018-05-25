@@ -38,3 +38,12 @@ it("should be able to add the registration number that start with CK.", function
   });
 
 });
+
+describe('Filter Function', function(){
+  it('Should filter reg by CA', function(){
+    var factory = Registration();
+    var regMap = {'CA 12345':0};
+
+    assert.equal(factory.findFrom(regMap), {'CA 123345':0})
+  });
+});

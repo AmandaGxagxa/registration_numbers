@@ -1,11 +1,11 @@
 // document.addEventListener('DOMContentLoaded', function () {
   var regisInput = document.querySelector(".inputReg");
   var addRegBtn = document.querySelector(".btn");
-  var errorMsgElem = document.querySelector('.errorMsg')
+  var errorMsgElem = document.querySelector('.errorMsg');
   var addResetBtn =  document.querySelector(".btn_reset");
   //var selectElem = document.querySelector(".myPlaces");
   var displayElem = document.querySelector('.regNum');
-  var dropDownElem = document.querySelector('.dropDown')
+  var dropDownElem = document.querySelector('.dropDown');
   var display = document.getElementById('unordered');
   var storedReg = localStorage.getItem('StoredNumbers') ? JSON.parse(localStorage.getItem('StoredNumbers')) : {};
   var registration = Registration(storedReg );
@@ -21,24 +21,27 @@
   addResetBtn.addEventListener('click' , function() {
     window.localStorage.clear();
     displayElem.innerHTML = '';
-  })
+  });
   addRegBtn.addEventListener('click', function() {
     var input = regisInput.value.toUpperCase();
-    var regex = /^[A-Z]{2,3}\s\d{3}\W\d{3}$/
+    var regex = /^[A-Z]{2,3}\s\d{3}\W\d{3}$/;
     var matchReg = input.match(regex);
-    //let  numberPlate = matchReg[0]
-    //console.log(numberPlate);
-    //var startWith = matchReg.startsWith('CA') || matchReg.startsWith('CJ')
+
     regisInput.value = "";
     errorMsgElem.innerHTML = '';
-    var flag = registration.addRegNumber(matchReg[0]);
-    if(flag){
-      addElements(matchReg[0]);
-      localStorage.setItem('StoredNumbers', JSON.stringify(registration.getRegMapKeys()));
+  if(matchReg ===null){
+    errorMsgElem.innerHTML = 'Please enter a valid registration number';
+    errorMsgElem.style.color = "orange";
+    alert("the format is CA 123-123" )
     }
     else {
-   errorMsgElem.innerHTML = 'Please enter a valid registration number';
-   errorMsgElem.style.color = "orange";
+      var flag = registration.addRegNumber(matchReg[0]);
+
+        if(flag){
+          addElements(matchReg[0]);
+          localStorage.setItem('StoredNumbers', JSON.stringify(registration.getRegMapKeys()));
+        }
+
     }
 
   });
@@ -46,9 +49,9 @@
     var loadPage = registration.getRegMapKeys();
 
     for (var i = 0; i < loadPage.length; i++) {
-      addElements(loadPage[i])
+      addElements(loadPage[i]);
     }
-  })
+  });
 
 // });
 
