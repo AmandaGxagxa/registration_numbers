@@ -24,11 +24,16 @@
   })
   addRegBtn.addEventListener('click', function() {
     var input = regisInput.value.toUpperCase();
+    var regex = /^[A-Z]{2,3}\s\d{3}\W\d{3}$/
+    var matchReg = input.match(regex);
+    //let  numberPlate = matchReg[0]
+    //console.log(numberPlate);
+    //var startWith = matchReg.startsWith('CA') || matchReg.startsWith('CJ')
     regisInput.value = "";
     errorMsgElem.innerHTML = '';
-    var flag = registration.addRegNumber(input);
+    var flag = registration.addRegNumber(matchReg[0]);
     if(flag){
-      addElements(input);
+      addElements(matchReg[0]);
       localStorage.setItem('StoredNumbers', JSON.stringify(registration.getRegMapKeys()));
     }
     else {
