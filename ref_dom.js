@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
   var regisInput = document.querySelector(".inputReg");
   var addRegBtn = document.querySelector(".btn");
   var errorMsgElem = document.querySelector('.errorMsg')
@@ -45,16 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  dropDownElem.addEventListener('change', function(){
-    console.log('Chnged');
-    var filter = registration.findFrom(dropDownElem.value);
-    display.innerHTML = "";
+// });
 
-    if (filter.length  > 0) {
-      for (var i = 0; i < filter.length; i++) {
-        addElements(filter[i]);
-      }
+dropDownElem.addEventListener('change', function(){
+  console.log(dropDownElem.value);
+  var filter = registration.findFrom(dropDownElem.value);
+
+  display.innerHTML = "";
+
+  if (filter.length  > 0) {
+    for (var i = 0; i < filter.length; i++) {
+      addElements(filter[i]);
     }
-  });
-
+  }
 });
