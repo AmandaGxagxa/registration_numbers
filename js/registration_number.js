@@ -7,9 +7,7 @@ function Registration(registrationNumbers) {
 
   function addRegNumber(regNumber) {
     if (regNumber != '') {
-      if (regNumber) {
         regNum = regNumber;
-
         if (regMap[regNum] === undefined) {
           for (var i = 0; i < regNumber.length; i++) {
             if (regNumber.startsWith('CA') || regNumber.startsWith('CY') || regNumber.startsWith('CL') || regNumber.startsWith('CK') || regNumber.startsWith('CJ') || regNumber.startsWith('CAW')) {
@@ -19,7 +17,7 @@ function Registration(registrationNumbers) {
           }
         }
         return false;
-      }
+
     }
   }
 

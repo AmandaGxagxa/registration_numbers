@@ -3,7 +3,7 @@
   var addRegBtn = document.querySelector(".btn");
   var errorMsgElem = document.querySelector('.errorMsg');
   var addResetBtn =  document.querySelector(".btn_reset");
-  //var selectElem = document.querySelector(".myPlaces");
+  var errorMsg2Elem = document.querySelector('.errorMsg2');
   var displayElem = document.querySelector('.regNum');
   var dropDownElem = document.querySelector('.dropDown');
   var display = document.getElementById('unordered');
@@ -18,10 +18,7 @@
 
     display.appendChild(span);
   }
-  addResetBtn.addEventListener('click' , function() {
-    window.localStorage.clear();
-    displayElem.innerHTML = '';
-  });
+
   addRegBtn.addEventListener('click', function() {
     var input = regisInput.value.toUpperCase();
     var regex = /^[A-Z]{2,3}\s\d{3}\W\d{3}$/;
@@ -29,21 +26,26 @@
 
     regisInput.value = "";
     errorMsgElem.innerHTML = '';
-  if(matchReg ===null){
-    errorMsgElem.innerHTML = 'Please enter a valid registration number';
-    errorMsgElem.style.color = "orange";
-    alert("the format is CA 123-123" )
-    }
+
+  if(matchReg !==null ){
+    var flag = registration.addRegNumber(matchReg[0]);
+   if (flag) {
+     addElements(matchReg[0]);
+       localStorage.setItem('StoredNumbers', JSON.stringify(registration.getRegMapKeys()));
+   }
     else {
-      var flag = registration.addRegNumber(matchReg[0]);
-
-        if(flag){
-          addElements(matchReg[0]);
-          localStorage.setItem('StoredNumbers', JSON.stringify(registration.getRegMapKeys()));
-        }
-
+      console.log("found");
+        errorMsgElem.innerHTML ="this registration number is already stored or this does not start with CA,CJ,CK,CY & CAW "
+        errorMsgElem.style.color = 'orange';
     }
 
+  }
+  if(matchReg == null || matchReg == ""){
+  errorMsgElem.innerHTML ="You have been entered an invalid registration number <i>the format is CA 123-123</i>"
+    errorMsgElem.style.color = 'orange';
+  console.log("yes")
+
+}
   });
   window.addEventListener('load', function(){
     var loadPage = registration.getRegMapKeys();
@@ -53,7 +55,10 @@
     }
   });
 
-// });
+  addResetBtn.addEventListener('click' , function() {
+    localStorage.clear();
+    displayElem.innerHTML = '';
+  });
 
 dropDownElem.addEventListener('change', function(){
   console.log(dropDownElem.value);
