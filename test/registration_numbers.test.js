@@ -1,4 +1,4 @@
-describe('Returns Cape Town because startswith CA', function() {
+describe('add Registration Numbers function', function() {
 
   it("should  not take the registration number twice.", function() {
     var registration = Registration();
