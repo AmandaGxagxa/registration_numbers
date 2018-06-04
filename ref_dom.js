@@ -15,7 +15,6 @@
     //var input = regisInput.value;
     var span = document.createElement('span');
     span.textContent = input;
-
     display.appendChild(span);
   }
 
