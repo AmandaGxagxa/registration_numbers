@@ -29,6 +29,9 @@ function Registration(registrationNumbers) {
   function getRegMapKeys() {
     return regMap
   }
+  function getMapArray() {
+  return Object.keys(regMap);
+  }
 
   // function findFrom(regMap){
   //
@@ -64,7 +67,8 @@ return filteredList;
     addRegNumber,
     getRegMapKeys,
     getRegNum,
-    findFrom
+    findFrom,
+    getMapArray
     //getRegNumber
     //isValid
 

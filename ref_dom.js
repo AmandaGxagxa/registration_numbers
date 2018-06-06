@@ -48,7 +48,6 @@
   });
   window.addEventListener('load', function(){
     var loadPage = registration.getRegMapKeys();
-
     for (var i = 0; i < loadPage.length; i++) {
       addElements(loadPage[i]);
     }

@@ -4,11 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Registration numbers</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
   <link rel="stylesheet" href="css/registration_number.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-  <script type="text/x-templatejavascript">
-
+  <script type="text/x-templatejavascript" class="regNumTemplate">
+  {{#each registration}}
+  <div id='{{unordered2}}' style="list-style-type:none"><span>{{this}}</span></div>
+  {{/each}}
   </script>
 </head>
 
@@ -44,33 +48,33 @@
         </div>
       </div>
     </div>
+    <!--registration numbers with handlebars  -->
     <div class="six columns box">
       <div class="row">
         <h4>Registration numbers:</h4><hr>
-        <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg" name="" value="">
-        <button type="button" class="button-primary btn" name="button">Add</button>
-        <button type="button" class="button-primary btn_reset" name="button">Clear</button>
+        <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg2" name="" value="">
+        <button type="button" class="button-primary btn2" name="button">Add</button>
+        <button type="button" class="button-primary btn_reset2" name="button">Clear</button>
         <br>
-        <label class="errorMsg" for=""></label>
+        <label class="errorMsg1" for=""></label>
       </div>
       <div class="row">
-        <div class="towns">
+        <div class="towns2">
           <h5>SELECT BY TOWN</h5><hr>
-          <select class="dropDown">
-          <option class="dropDowns" value = "All">All</option>
-          <option class="dropDowns" value = "CA ">Cape Town</option>
-          <option  class="dropDowns" value = "CY">Bellville</option>
-          <option class="dropDowns" value = "CJ">Paarl</option>
-          <option class="dropDowns" value = "CL">Stellenbosch</option>
-          <option class="dropDowns" value = "CK">Malmesbury</option>
-          <option class="dropDowns" value = "CAW">George</option>
+          <select class="dropDown2">
+          <option class="dropDowns2" value = "All">All</option>
+          <option class="dropDowns2" value = "CA ">Cape Town</option>
+          <option  class="dropDowns2" value = "CY">Bellville</option>
+          <option class="dropDowns2" value = "CJ">Paarl</option>
+          <option class="dropDowns2" value = "CL">Stellenbosch</option>
+          <option class="dropDowns2" value = "CK">Malmesbury</option>
+          <option class="dropDowns2" value = "CAW">George</option>
         </select>
         </div>
       </div>
       <div class="row">
-        <div class="regNum">
-          <div id='unordered' style="list-style-type:none">
-          </div>
+        <div class="regNum2">
+
         </div>
       </div>
     </div>
@@ -80,4 +84,7 @@
 </body>
 <script src="js/registration_number.js" charset="utf-8"></script>
 <script src="ref_dom.js" charset="utf-8"></script>
+<script src="handlebars-dom.js" charset="utf-8"></script>
+
+</script>
 </html>
