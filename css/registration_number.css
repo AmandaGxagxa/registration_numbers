@@ -42,7 +42,16 @@ body{
   width: 98%;
   margin-left: 1em;
 }
+@media (min-width: 800px) {
+  .box{
+    display: inline-block;
+    width: 42%;
+    vertical-align: top;
+    margin-top: 2em;
+    margin: 1em;
+  }
 
+}
 /* ul{
   style="list-style-type:none"
 } */
