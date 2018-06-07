@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <script type="text/x-templatejavascript" class="regNumTemplate">
     {{#each registration}}
-    <div id='{{unordered2}}' style="list-style-type:none"><span>{{this}}</span></div>
+    <div class='u-pull-left {{unordered2}}' style="  align-items: center;  display: flex"><span class="u-pull-left" style="margin: auto;;">{{this}}</span></div>
     {{/each}}
   </script>
 </head>
@@ -20,20 +20,20 @@
   <div class="row content">
     <div class="twelve columns">
       <div class="box">
-          <div class="row">
-            <h4>Registration numbers :</h4>
+        <div class="row">
+          <h4>Registration numbers :</h4>
+          <hr>
+          <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg" name="" value="">
+          <button type="button" class="button-primary btn" name="button">Add</button>
+          <button type="button" class="button-primary btn_reset" name="button">Clear</button>
+          <br>
+          <label class="errorMsg" for=""></label>
+        </div>
+        <div class="row">
+          <div class="towns">
+            <h5>SELECT BY TOWN</h5>
             <hr>
-            <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg" name="" value="">
-            <button type="button" class="button-primary btn" name="button">Add</button>
-            <button type="button" class="button-primary btn_reset" name="button">Clear</button>
-            <br>
-            <label class="errorMsg" for=""></label>
-          </div>
-          <div class="row">
-            <div class="towns">
-              <h5>SELECT BY TOWN</h5>
-              <hr>
-              <select class="dropDown">
+            <select class="dropDown">
           <option class="dropDowns" value = "All">All</option>
           <option class="dropDowns" value = "CA ">Cape Town</option>
           <option  class="dropDowns" value = "CY">Bellville</option>
@@ -42,31 +42,31 @@
           <option class="dropDowns" value = "CK">Malmesbury</option>
           <option class="dropDowns" value = "CAW">George</option>
         </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="regNum">
-
-            </div>
           </div>
         </div>
+        <div class="row">
+          <div class="regNum">
+
+          </div>
+        </div>
+      </div>
 
       <!--registration numbers with handlebars  -->
       <div class="box">
-          <div class="row">
-            <h4>Registration numbers with template:</h4>
+        <div class="row">
+          <h4>Registration numbers with template:</h4>
+          <hr>
+          <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg2" name="" value="">
+          <button type="button" class="button-primary btn2" name="button">Add</button>
+          <button type="button" class="button-primary btn_reset2" name="button">Clear</button>
+          <br>
+          <label class="errorMsg1" for=""></label>
+        </div>
+        <div class="row">
+          <div class="towns2">
+            <h5>SELECT BY TOWN</h5>
             <hr>
-            <input type="text" onfocus="this.value=''" placeholder="CA 111-111" class="inputReg2" name="" value="">
-            <button type="button" class="button-primary btn2" name="button">Add</button>
-            <button type="button" class="button-primary btn_reset2" name="button">Clear</button>
-            <br>
-            <label class="errorMsg1" for=""></label>
-          </div>
-          <div class="row">
-            <div class="towns2">
-              <h5>SELECT BY TOWN</h5>
-              <hr>
-              <select class="dropDown2">
+            <select class="dropDown2">
           <option class="dropDowns2" value = "All">All</option>
           <option class="dropDowns2" value = "CA ">Cape Town</option>
           <option  class="dropDowns2" value = "CY">Bellville</option>
@@ -75,16 +75,16 @@
           <option class="dropDowns2" value = "CK">Malmesbury</option>
           <option class="dropDowns2" value = "CAW">George</option>
         </select>
-            </div>
           </div>
-          <div class="row">
-            <div class="regNum2">
+        </div>
+        <div class="row">
+          <div class="regNum2">
 
-            </div>
           </div>
-        <div>
         </div>
       </div>
+    </div>
+  </div>
 </body>
 <script src="js/registration_number.js" charset="utf-8"></script>
 <script src="ref_dom.js" charset="utf-8"></script>
