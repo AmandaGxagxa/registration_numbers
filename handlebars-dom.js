@@ -51,11 +51,10 @@ addRegBtn2.addEventListener('click', function() {
   }
 });
 
-
 window.addEventListener('load', function() {
 
   // TODO: create a variable that store values in the templatejavascript
-  // TODO:
+
   var regdata = {
     registration: registration2.getMapArray(),
   }

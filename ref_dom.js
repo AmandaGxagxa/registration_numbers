@@ -46,15 +46,17 @@
 
 }
   });
-  window.addEventListener('load', function(){
-    var loadPage = registration.getRegMapKeys();
-    console.log(loadPage)
+  window.addEventListener('DOMContentLoaded', function(){
+    var loadPage = localStorage.getItem('StoredNumbers');
+    //console.log(loadPage)
 
-    for (var i = 0; i < loadPage.length; i++) {
-      console.log(loadPage[i])
+    loadPage = JSON.parse(loadPage);
 
-      addElements(loadPage[i]);
-      localStorage.getItem('StoredNumbers')
+    for (var keys in loadPage) {
+      console.log(keys)
+
+      addElements(keys);
+
     }
   });
 

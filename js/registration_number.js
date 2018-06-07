@@ -28,18 +28,10 @@ function Registration(registrationNumbers) {
   function getRegMapKeys() {
     return regMap
   }
+
   function getMapArray() {
   return Object.keys(regMap);
   }
-
-  // function findFrom(regMap){
-  //
-  //   var filterFunc = regMap.filter(regNum, regMap {
-  //
-  //   })
-  //
-  // }
-
 
   function findFrom(filterFor) {
 
