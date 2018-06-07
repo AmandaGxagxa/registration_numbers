@@ -9,9 +9,6 @@ body{
   border-radius: 1em;
 
 }
-/* .btn{
-  margin-left: 30px;
-} */
   span{
     display:inline-block;
     width: 120px;
@@ -30,7 +27,7 @@ body{
   padding: 0.75em;
   border-radius : 0.5em;
   border : 3px solid #ddd;
-  height: auto;
+  /* height: auto; */
   margin-top: 1em;
   margin: 2em;
 }
@@ -44,13 +41,13 @@ body{
   width: 98%;
   margin-left: 1em;
 }
-@media (max-width: 750px) {
+@media (min-width: 750px) {
   .box{
     display: inline-block;
-    width: 42%;
+    width: 40%;
     vertical-align: top;
     margin-top: 50px;
-    margin: 2em;
+    margin: 1em;
 
   }
 
