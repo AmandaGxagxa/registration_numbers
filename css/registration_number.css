@@ -21,7 +21,7 @@ span {
   background-color: orange;
   padding: 7px;
   margin: 2px;
-
+float: left;
 }
 
 .box {
