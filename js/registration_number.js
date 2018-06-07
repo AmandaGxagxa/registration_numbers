@@ -24,7 +24,6 @@ function Registration(registrationNumbers) {
   function getRegNum() {
     return regNum;
   }
-  //console.log(getRegNumber());
 
   function getRegMapKeys() {
     return regMap

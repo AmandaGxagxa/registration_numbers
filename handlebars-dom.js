@@ -61,16 +61,15 @@ window.addEventListener('load', function() {
   }
   var regData = compileRegTemplate(regdata)
   insertMyDataAt.innerHTML = regData;
-  var loadPage = registration2.getRegMapKeys();
-
-  for (var i = 0; i < loadPage.length; i++) {
-    loadPage[i];
+  var loadPage1 = registration2.getMapArray();
+  for (var i = 0; i < loadPage1.length; i++) {
+    loadPage1[i];
   }
 });
 
 addResetBtn2.addEventListener('click', function() {
   localStorage.clear();
-  displayElem2.innerHTML = '';
+  insertMyDataAt.innerHTML = '';
 });
 
 dropDownElem2.addEventListener('change', function() {

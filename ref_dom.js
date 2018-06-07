@@ -15,7 +15,7 @@
     //var input = regisInput.value;
     var span = document.createElement('span');
     span.textContent = input;
-    display.appendChild(span);
+    displayElem.appendChild(span);
   }
 
   addRegBtn.addEventListener('click', function() {
@@ -48,8 +48,13 @@
   });
   window.addEventListener('load', function(){
     var loadPage = registration.getRegMapKeys();
+    console.log(loadPage)
+
     for (var i = 0; i < loadPage.length; i++) {
+      console.log(loadPage[i])
+
       addElements(loadPage[i]);
+      localStorage.getItem('StoredNumbers')
     }
   });
 
@@ -62,7 +67,7 @@ dropDownElem.addEventListener('change', function(){
   console.log(dropDownElem.value);
   var filter = registration.findFrom(dropDownElem.value);
 
-  display.innerHTML = "";
+  displayElem.innerHTML = "";
 
   if (filter.length  > 0) {
     for (var i = 0; i < filter.length; i++) {
